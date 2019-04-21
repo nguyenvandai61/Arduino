@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello world</title>
+</head>
+
+<body>
+    <script src="node_modules/socket.io/lib/socket.js"></script>
+
+    <script>
+        var socket = io();
+    </script>
+    <script src="node_module/jquery/dist/jquery.js"></script>
+    
+    <form action="/" method="POST">
+            <input type="radio" name="value" value="1" id="On" onclick="func2()"/>Bật<br/>
+            <input type="radio" name="value" value="0" id="Off"  onclick="func2()"/>Tắt<br/>      
+            <button type="submit">Submit</button>  
+            
+    </form>
+    
+
+</body>
+
+</html>
