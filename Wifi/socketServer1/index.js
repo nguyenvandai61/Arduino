@@ -5,12 +5,12 @@ var http = require('http').Server(app);//#Khởi tạo một chương trình m�
 var io = require('socket.io')(http);//#Phải khởi tạo io sau khi tạo app!
 var bodyparser = require('body-parser');
 
-app.use(bodyparser.urlencoded({extended: true}));
-app.use(bodyparser.json());
 app.get('/', function (req, res) {
 	res.sendfile('main.html');
 });
 
+app.use(bodyparser.urlencoded({extended: true}));
+app.use(bodyparser.json());
 
 http.listen(PORT, function () {
 	console.log("Server nodejs chay tai dia chi: " + ip.address() + ":" + PORT)
