@@ -4,10 +4,10 @@
 
 SocketIOClient client;
 const int ledPin = D1;
-const char* ssid = "Anh Thu 2";          //Tên mạng Wifi mà Socket server của bạn đang kết nối
-const char* password = "999999999";  //Pass mạng wifi ahihi, anh em rãnh thì share pass cho mình với.
+const char* ssid = "CoE-C2";          //Tên mạng Wifi mà Socket server của bạn đang kết nối
+const char* password = "publicwifi2";  //Pass mạng wifi ahihi, anh em rãnh thì share pass cho mình với.
  
-char host[] = "192.168.0.102";  //Địa chỉ IP dịch vụ, hãy thay đổi nó theo địa chỉ IP Socket server của bạn.
+char host[] = "10.10.40.231";  //Địa chỉ IP dịch vụ, hãy thay đổi nó theo địa chỉ IP Socket server của bạn.
 int port = 8888;                  //Cổng dịch vụ socket server do chúng ta tạo!
  
 //từ khóa extern: dùng để #include các biến toàn cục ở một số thư viện khác. Trong thư viện SocketIOClient có hai biến toàn cục
