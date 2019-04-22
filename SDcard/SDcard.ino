@@ -6,7 +6,7 @@
  ** MOSI - pin 11
  ** MISO - pin 12
  ** CLK - pin 13
- ** CS - pin 4 (for MKRZero SD: SDCARD_SS_PIN)
+ ** CS - pin 10 (for MKRZero SD: SDCARD_SS_PIN)
    DHT
 */
 #include <SPI.h>
@@ -25,16 +25,26 @@ void setup() {
     ; // wait for serial port to connect. Needed for native USB port only
   }
   dht.begin();
-
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+   Serial.println("Nhiet do: ");
+    Serial.println(round(t));
+    Serial.println("Do am: ");
+    Serial.print(round(h));
+    Serial.print(" %");
+    Serial.println();
+  
 
   Serial.print("Initializing SD card...");
 
-  if (!SD.begin(4)) {
+  if (!SD.begin(10)) {
     Serial.println("initialization failed!");
     while (1);
   }
   Serial.println("initialization done.");
-
+  
+  
+    
   // open the file. note that only one file can be open at a time,
   // so you have to close this one before opening another.
   myFile = SD.open("DHT.txt", FILE_WRITE);
@@ -42,17 +52,10 @@ void setup() {
   if (isnan(t) || isnan(h)) {
     Serial.println("READING error");
 
-    float h = dht.readHumidity();
-    float t = dht.readTemperature();
-    Serial.println("Nhiet do: ");
-    Serial.println(round(t));
-    Serial.println("Do am: ");
-    Serial.print(round(h));
-    Serial.print(" %");
-    Serial.println();
   }
   else
   {
+    
     // if the file opened okay, write to it:
     if (myFile) {
       Serial.print("Writing to DHT.txt...");
