@@ -23,10 +23,9 @@ void loop() {
   Serial.println(mpu6050.getAngleY());
   
   lcd.setCursor(0, 0);
-  lcd.print(mpu6050.getAngleY());
-  lcd.print(round(mpu6050.getAngleY() +90));
-  s.write(mpu6050.getAngleY()+90);
+  lcd.print(round(mpu6050.getAngleY()+90));
+  s.write(round(mpu6050.getAngleY()+90));
 
-  delay(500);
+  delay(200);
   lcd.clear();
 }
