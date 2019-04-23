@@ -27,12 +27,6 @@ void setup() {
   dht.begin();
   float h = dht.readHumidity();
   float t = dht.readTemperature();
-   Serial.println("Nhiet do: ");
-    Serial.println(round(t));
-    Serial.println("Do am: ");
-    Serial.print(round(h));
-    Serial.print(" %");
-    Serial.println();
   
 
   Serial.print("Initializing SD card...");
@@ -48,7 +42,6 @@ void setup() {
   // open the file. note that only one file can be open at a time,
   // so you have to close this one before opening another.
   myFile = SD.open("DHT.txt", FILE_WRITE);
-
   if (isnan(t) || isnan(h)) {
     Serial.println("READING error");
 
