@@ -83,8 +83,6 @@ void setup()
     pinMode(Cols[i], OUTPUT);
   }
 
-  Serial.println(string);
-
 
 
 }
@@ -93,7 +91,6 @@ void setup()
 void loop()
 {
 
-  Serial.println("Nhap ten: ");
 
   for (int k = 0; k < string.length(); k++)
   {
@@ -106,14 +103,6 @@ void loop()
         }
 
       }
-      /*So sanh ky tu vua nhap voi mang character*/
-      if ((i == (sizeof(character) - 1)) && (string.charAt(k) != character[i]))
-      {
-        Serial.print(string.charAt(k));
-        Serial.println(":invalid character");
-      }
-    }
-
     delay(300);
   }
 
